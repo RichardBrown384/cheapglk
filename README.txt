@@ -28,6 +28,14 @@ newlines.)
     -uo: Generate UTF-8 encoded text on stdout.
     -u: Both of the above.
 
+    -dataresource NUM:PATHNAME: Where to look for binary data resource
+        file NUM. (If this is not supplied, but the game is blorbed,
+        the interpreter looks for a DATA chunk in the Blorb file.)
+    -dataresourcetext NUM:PATHNAME: Same, but the resource file is
+        assumed to be text.
+    -dataresourcebin NUM:PATHNAME: Same as -dataresource. (Binary is
+        the default assumption.)
+
     -q: Don't display the "Welcome to CheapGlk" banner before the game.
 
     -D: Consider "/" to be a debug command prefix; all /commands are
@@ -176,7 +184,8 @@ key as meta key" preference.)
     a open-for-reading prompt also returns null, rather than an invalid
     fileref. This brings the library more or less in line with the spec.
     See discussion: https://github.com/erkyrath/glk-dev/issues/6
-    Replace deprecated mktemp() call with mkstemp().
+    Replaced deprecated mktemp() call with mkstemp().
+    Added the -dataresource[text,bin] arguments.
 
 1.0.6:
     Declared support for Glk spec 0.7.5.
